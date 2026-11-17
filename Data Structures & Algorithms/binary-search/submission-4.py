@@ -1,0 +1,15 @@
+class Solution:
+    def search(self, nums: List[int], target: int) -> int:
+        l, r = 0, len(nums) - 1
+        while l <= r:
+            m = l + (r - l) // 2
+            print(f"l is {l}, r is {r}, m is {m}")
+            if nums[m] == target:
+                return m
+            elif nums[m] > target:
+                r = m - 1
+            else:
+                l = m + 1
+        
+        return -1
+        
